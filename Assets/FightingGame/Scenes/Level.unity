@@ -3700,6 +3700,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1783987943582161505, guid: fd5b25a3d2bbd5d4f82f78c132fc5624, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e1f574a6ceb255c43ba5c4d70dcc88a5, type: 2}
+    - target: {fileID: 1783987943582161505, guid: fd5b25a3d2bbd5d4f82f78c132fc5624, type: 3}
+      propertyPath: m_WarningMessage
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5001814653446576801, guid: fd5b25a3d2bbd5d4f82f78c132fc5624, type: 3}
       propertyPath: m_Name
       value: young_adult_man_D
