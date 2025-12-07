@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
@@ -41,6 +39,20 @@ public class CarAnimationController : MonoBehaviour
         idleSequence.SetLoops(-1);
     }
 
+    public void StopIdleAnimation()
+    {
+        if (idleSequence != null)
+        {
+            idleSequence.Kill();
+        
+            if (animatedChild != null)
+            {
+                animatedChild.localEulerAngles = originalRotation;
+                animatedChild.localScale = originalScale;
+            }
+        }
+    }
+    
     void OnDestroy()
     {
         if (idleSequence != null)

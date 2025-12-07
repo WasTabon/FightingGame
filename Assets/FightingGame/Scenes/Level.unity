@@ -1691,6 +1691,7 @@ Transform:
   m_Children:
   - {fileID: 1185412999}
   - {fileID: 1969765903}
+  - {fileID: 2003565005}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &267433218
@@ -4708,6 +4709,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7652878315233739181, guid: 83d8d52aec4c1b14094bbdcf57836a31, type: 3}
   m_PrefabInstance: {fileID: 659317554}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &663692004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 663692005}
+  m_Layer: 0
+  m_Name: CarPos2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &663692005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663692004}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -9.44, y: 0.53645086, z: 0.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &678881098
 GameObject:
   m_ObjectHideFlags: 0
@@ -6027,9 +6059,9 @@ RectTransform:
   - {fileID: 1450196235}
   m_Father: {fileID: 1480895786}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.14528298, y: 0.41110316}
-  m_AnchorMax: {x: 0.14528298, y: 0.41110316}
-  m_AnchoredPosition: {x: 7, y: -3}
+  m_AnchorMin: {x: 0.1478617, y: 0.34912106}
+  m_AnchorMax: {x: 0.1478617, y: 0.34912106}
+  m_AnchoredPosition: {x: 1, y: -1}
   m_SizeDelta: {x: 337.5292, y: 132.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &808126903
@@ -9886,7 +9918,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.82686174, y: 0.34912106}
   m_AnchorMax: {x: 0.82686174, y: 0.34912106}
-  m_AnchoredPosition: {x: -1.6936646, y: -4.14917}
+  m_AnchoredPosition: {x: -1.6936035, y: -4.14917}
   m_SizeDelta: {x: 384.8533, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1375762016
@@ -10652,9 +10684,9 @@ RectTransform:
   - {fileID: 1505004963}
   m_Father: {fileID: 1480895786}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.14528298, y: 0.24100001}
-  m_AnchorMax: {x: 0.14528298, y: 0.24100001}
-  m_AnchoredPosition: {x: 7, y: -3.329956}
+  m_AnchorMin: {x: 0.1478617, y: 0.1805232}
+  m_AnchorMax: {x: 0.1478617, y: 0.1805232}
+  m_AnchoredPosition: {x: 1, y: -2.329956}
   m_SizeDelta: {x: 337.5292, y: 132.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1475801320
@@ -14907,6 +14939,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4447452820336356378, guid: ff41fdb257e0b7f45a3f34c2e1751dd2, type: 3}
   m_PrefabInstance: {fileID: 1989094324}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2003565004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2003565005}
+  - component: {fileID: 2003565006}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2003565005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003565004}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 266080534}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2003565006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003565004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4cdfed6466cf343ad3b689c6dba626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  findMatchButton: {fileID: 1022736706}
+  carAnimationController: {fileID: 1969765904}
+  car: {fileID: 6107925103034507707}
+  carPoint1: {fileID: 2009986397}
+  carPoint2: {fileID: 663692005}
+  virtualCamera1: {fileID: 973347772}
+  virtualCamera2: {fileID: 458285966}
+  carMoveDuration: 2
 --- !u!1 &2007742281
 GameObject:
   m_ObjectHideFlags: 0
@@ -14943,7 +15027,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.82686174, y: 0.81787896}
   m_AnchorMax: {x: 0.82686174, y: 0.81787896}
-  m_AnchoredPosition: {x: -1.6900024, y: -2}
+  m_AnchoredPosition: {x: -1.6899414, y: -2}
   m_SizeDelta: {x: 511.9414, y: 241.67499}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2007742283
@@ -15028,6 +15112,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007742281}
   m_CullTransparentMesh: 1
+--- !u!1 &2009986396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2009986397}
+  m_Layer: 0
+  m_Name: CarPos1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2009986397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009986396}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -62.802, y: 0.53645086, z: 0.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2011873848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18034,3 +18149,5 @@ SceneRoots:
   - {fileID: 1475896810}
   - {fileID: 6107925103034507707}
   - {fileID: 266080534}
+  - {fileID: 2009986397}
+  - {fileID: 663692005}
