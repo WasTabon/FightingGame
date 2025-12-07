@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private float slideDistance = 1000f;
     [SerializeField] private float searchDuration = 3f;
     [SerializeField] private GameObject[] _canvasObjects;
+    [SerializeField] private GameObject _player;
 
     private Transform panelChild;
     private TextMeshProUGUI searchText;
@@ -44,6 +45,8 @@ public class GameController : MonoBehaviour
             }
             findMatchPanel.SetActive(false);
         }
+
+        _player.SetActive(false);
     }
 
     void PreparePanelAnimation()
@@ -143,7 +146,13 @@ public class GameController : MonoBehaviour
 
         if (car != null && carPoint2 != null)
         {
-            car.DOMove(carPoint2.position, carMoveDuration).SetEase(Ease.InOutQuad);
+            car.DOMove(carPoint2.position, carMoveDuration)
+                .SetEase(Ease.InOutQuad)
+                .OnComplete((() =>
+                {
+                    _player.SetActive(true);
+                    car.DOMove(carPoint1.position, carMoveDuration);
+                }));
         }
     }
 
