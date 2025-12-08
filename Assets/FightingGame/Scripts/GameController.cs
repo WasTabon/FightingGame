@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private float searchDuration = 3f;
     [SerializeField] private GameObject[] _canvasObjects;
     [SerializeField] private GameObject _player;
+    [SerializeField] private UIController uiController;
 
     private Transform panelChild;
     private TextMeshProUGUI searchText;
@@ -148,11 +149,17 @@ public class GameController : MonoBehaviour
         {
             car.DOMove(carPoint2.position, carMoveDuration)
                 .SetEase(Ease.InOutQuad)
-                .OnComplete((() =>
+                .OnComplete(() =>
                 {
                     _player.SetActive(true);
+                    
+                    if (uiController != null)
+                    {
+                        uiController.ShowCardsPanel();
+                    }
+                    
                     car.DOMove(carPoint1.position, carMoveDuration);
-                }));
+                });
         }
     }
 
