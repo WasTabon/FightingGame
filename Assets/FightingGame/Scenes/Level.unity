@@ -1027,6 +1027,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7652878315233739181, guid: 83d8d52aec4c1b14094bbdcf57836a31, type: 3}
   m_PrefabInstance: {fileID: 147952271}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &152469885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 152469886}
+  - component: {fileID: 152469887}
+  m_Layer: 0
+  m_Name: CameraController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &152469886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152469885}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 266080534}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &152469887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152469885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ada3d5f68fa664da76982936fa908c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialCamera: {fileID: 973347772}
+  otherCameras:
+  - {fileID: 458285966}
+  - {fileID: 946860465}
+  - {fileID: 1954520486}
 --- !u!1001 &168028107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1770,6 +1819,7 @@ Transform:
   - {fileID: 2003565005}
   - {fileID: 751207740}
   - {fileID: 726454969}
+  - {fileID: 152469886}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &267433218
@@ -5973,6 +6023,7 @@ MonoBehaviour:
   cameraPos2: {fileID: 458285966}
   playerHitCamera: {fileID: 946860465}
   botHitCamera: {fileID: 1954520486}
+  cameraBlendDuration: 2
   cardsPanel: {fileID: 1805828147}
   cardButtons:
   - {fileID: 534288318}
@@ -5984,19 +6035,19 @@ MonoBehaviour:
   - cardName: Jab
     animationStateName: Jab 1
     victimAnimationStateName: Hit Body New
-    hitTimingSeconds: 0.019
+    hitTimingSeconds: 0.19
     baseDamage: 15
     isDefense: 0
   - cardName: Uppercut
     animationStateName: Uppercut New
     victimAnimationStateName: Head Hit New
-    hitTimingSeconds: 0.014
+    hitTimingSeconds: 0.14
     baseDamage: 25
     isDefense: 0
   - cardName: Special
     animationStateName: Mma Kick New
     victimAnimationStateName: Head Hit New
-    hitTimingSeconds: 0.029
+    hitTimingSeconds: 0.29
     baseDamage: 35
     isDefense: 0
   - cardName: Defense
@@ -6011,6 +6062,9 @@ MonoBehaviour:
   maxHealth: 100
   defaultColliderCenterY: 1
   deathColliderCenterY: 2
+  delayBetweenTurns: 0.5
+  cardsPanelSlideDuration: 0.5
+  cardsPanelSlideDistance: 1000
 --- !u!1001 &735601959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10956,8 +11010,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329124944}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -48.269234, y: 4.8231435, z: -0.11713076}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.280062, y: 2.34, z: -1.5799999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

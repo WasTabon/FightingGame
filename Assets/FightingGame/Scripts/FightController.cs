@@ -25,6 +25,7 @@ public class FightController : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera cameraPos2;
     [SerializeField] private CinemachineVirtualCamera playerHitCamera;
     [SerializeField] private CinemachineVirtualCamera botHitCamera;
+    [SerializeField] private float cameraBlendDuration = 2f;
     
     [Header("UI")]
     [SerializeField] private GameObject cardsPanel;
@@ -43,6 +44,11 @@ public class FightController : MonoBehaviour
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private float defaultColliderCenterY = 1f;
     [SerializeField] private float deathColliderCenterY = 2f;
+    [SerializeField] private float delayBetweenTurns = 0.5f;
+    
+    [Header("Cards Panel Animation")]
+    [SerializeField] private float cardsPanelSlideDuration = 0.5f;
+    [SerializeField] private float cardsPanelSlideDistance = 1000f;
     
     private int playerHealth;
     private int botHealth;
@@ -51,6 +57,7 @@ public class FightController : MonoBehaviour
     private float defenseMultiplier = 1f;
     private Vector3 playerOriginalPos;
     private Vector3 botOriginalPos;
+    private Vector3 cardsPanelOriginalPos;
     
     void Start()
     {
@@ -64,6 +71,7 @@ public class FightController : MonoBehaviour
         
         if (player != null) playerOriginalPos = player.position;
         if (bot != null) botOriginalPos = bot.position;
+        if (cardsPanel != null) cardsPanelOriginalPos = cardsPanel.transform.localPosition;
         
         Debug.Log($"[FightController] After init - cards count: {cards.Count}");
     }
@@ -172,20 +180,23 @@ public class FightController : MonoBehaviour
             return;
         }
         
-        Debug.Log("[FightController] Calling rouletteController.Spin()");
-        rouletteController.Spin(selectedCard.isDefense, (multiplier) =>
+        HideCardsPanel(() =>
         {
-            Debug.Log($"[FightController] Spin callback received, multiplier: {multiplier}");
-            if (selectedCard.isDefense)
+            Debug.Log("[FightController] Calling rouletteController.Spin()");
+            rouletteController.Spin(selectedCard.isDefense, (multiplier) =>
             {
-                defenseMultiplier = multiplier;
-                ExecuteBotTurn();
-            }
-            else
-            {
-                ExecuteAttack(player, bot, playerAnimator, botAnimator, 
-                    playerHitPos, playerHitCamera, selectedCard, multiplier, true);
-            }
+                Debug.Log($"[FightController] Spin callback received, multiplier: {multiplier}");
+                if (selectedCard.isDefense)
+                {
+                    defenseMultiplier = multiplier;
+                    DOVirtual.DelayedCall(delayBetweenTurns, () => ExecuteBotTurn());
+                }
+                else
+                {
+                    ExecuteAttack(player, bot, playerAnimator, botAnimator, 
+                        playerHitPos, playerHitCamera, selectedCard, multiplier, true);
+                }
+            });
         });
     }
     
@@ -220,13 +231,19 @@ public class FightController : MonoBehaviour
         Debug.Log($"[FightController] ExecuteAttack: {card.cardName}, isPlayerAttacking: {isPlayerAttacking}");
         
         Sequence attackSequence = DOTween.Sequence();
-        
+
+        attackSequence.AppendCallback(() => 
+        {
+            Debug.Log("[FightController] Moving attacker to hit position");
+        });
+        attackSequence.Append(attacker.DOMove(hitPos.position, moveToHitDuration).SetEase(Ease.OutQuad));
+
         attackSequence.AppendCallback(() => 
         {
             Debug.Log("[FightController] Switching camera");
             SwitchCamera(hitCamera);
         });
-        attackSequence.Append(attacker.DOMove(hitPos.position, moveToHitDuration).SetEase(Ease.OutQuad));
+        attackSequence.AppendInterval(cameraBlendDuration);
         
         attackSequence.AppendCallback(() =>
         {
@@ -261,7 +278,14 @@ public class FightController : MonoBehaviour
         
         attackSequence.AppendCallback(() =>
         {
-            Debug.Log("[FightController] Attack complete");
+            Debug.Log("[FightController] Attack animation complete, switching camera back");
+            SwitchCamera(cameraPos2);
+        });
+        attackSequence.AppendInterval(cameraBlendDuration);
+        
+        attackSequence.AppendCallback(() =>
+        {
+            Debug.Log("[FightController] Attack complete, returning to positions");
             OnAttackComplete(isPlayerAttacking);
         });
     }
@@ -316,14 +340,16 @@ public class FightController : MonoBehaviour
             if (wasPlayerAttacking)
             {
                 defenseMultiplier = 1f;
-                ExecuteBotTurn();
+                DOVirtual.DelayedCall(delayBetweenTurns, () => ExecuteBotTurn());
             }
             else
             {
                 isPlayerTurn = true;
                 defenseMultiplier = 1f;
-                SetCardsInteractable(true);
-                SwitchCamera(cameraPos2);
+                ShowCardsPanel(() =>
+                {
+                    SetCardsInteractable(true);
+                });
             }
         });
     }
@@ -364,6 +390,34 @@ public class FightController : MonoBehaviour
             if (cardButton != null)
                 cardButton.SetInteractable(interactable);
         }
+    }
+
+    void HideCardsPanel(System.Action onComplete = null)
+    {
+        if (cardsPanel == null)
+        {
+            onComplete?.Invoke();
+            return;
+        }
+
+        Debug.Log("[FightController] HideCardsPanel");
+        cardsPanel.transform.DOLocalMove(cardsPanelOriginalPos + Vector3.down * cardsPanelSlideDistance, cardsPanelSlideDuration)
+            .SetEase(Ease.InQuad)
+            .OnComplete(() => onComplete?.Invoke());
+    }
+
+    void ShowCardsPanel(System.Action onComplete = null)
+    {
+        if (cardsPanel == null)
+        {
+            onComplete?.Invoke();
+            return;
+        }
+
+        Debug.Log("[FightController] ShowCardsPanel");
+        cardsPanel.transform.DOLocalMove(cardsPanelOriginalPos, cardsPanelSlideDuration)
+            .SetEase(Ease.OutQuad)
+            .OnComplete(() => onComplete?.Invoke());
     }
     
     float GetAnimationLength(Animator animator, string stateName)

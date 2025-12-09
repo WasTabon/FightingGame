@@ -32,17 +32,31 @@ public class RouletteController : MonoBehaviour
     
     private float[] zoneStartAngles;
     private Action<float> onSpinComplete;
+    private bool isInitialized = false;
     
     void Awake()
     {
-        Debug.Log($"[RouletteController] Awake called");
+        Initialize();
+    }
+
+    void Initialize()
+    {
+        if (isInitialized) return;
+        
+        Debug.Log($"[RouletteController] Initialize called");
         Debug.Log($"[RouletteController] roulettePanel null: {roulettePanel == null}");
         Debug.Log($"[RouletteController] arrowTransform null: {arrowTransform == null}");
         Debug.Log($"[RouletteController] zones count: {zones.Count}");
         
         CalculateZoneAngles();
+        
         if (roulettePanel != null)
+        {
+            roulettePanel.transform.localScale = Vector3.one;
             roulettePanel.SetActive(false);
+        }
+        
+        isInitialized = true;
     }
     
     void CalculateZoneAngles()
@@ -66,6 +80,8 @@ public class RouletteController : MonoBehaviour
     
     public void Spin(bool isDefense, Action<float> callback)
     {
+        Initialize();
+        
         Debug.Log($"[RouletteController] Spin called, isDefense: {isDefense}, callback null: {callback == null}");
         
         onSpinComplete = callback;
@@ -76,11 +92,13 @@ public class RouletteController : MonoBehaviour
             callback?.Invoke(1f);
             return;
         }
+
+        DOTween.Kill(roulettePanel.transform);
+        if (arrowTransform != null)
+            DOTween.Kill(arrowTransform);
         
-        roulettePanel.SetActive(true);
         roulettePanel.transform.localScale = Vector3.zero;
-        roulettePanel.transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.OutBack);
-        Debug.Log("[RouletteController] Panel activated and scaling");
+        roulettePanel.SetActive(true);
         
         if (arrowTransform != null)
             arrowTransform.localRotation = Quaternion.identity;
@@ -91,6 +109,17 @@ public class RouletteController : MonoBehaviour
             resultText.transform.localScale = Vector3.zero;
         }
         
+        roulettePanel.transform.DOScale(Vector3.one, 0.3f)
+            .SetEase(Ease.OutBack)
+            .OnComplete(() =>
+            {
+                Debug.Log("[RouletteController] Panel scaled, starting spin");
+                StartSpinAnimation(isDefense);
+            });
+    }
+
+    void StartSpinAnimation(bool isDefense)
+    {
         float randomAngle = UnityEngine.Random.Range(0f, 360f);
         int rotations = UnityEngine.Random.Range(minRotations, maxRotations + 1);
         float totalRotation = rotations * 360f + randomAngle;
@@ -111,7 +140,7 @@ public class RouletteController : MonoBehaviour
         else
         {
             Debug.LogError("[RouletteController] arrowTransform is NULL!");
-            callback?.Invoke(1f);
+            onSpinComplete?.Invoke(1f);
         }
     }
     
@@ -229,6 +258,8 @@ public class RouletteController : MonoBehaviour
     
     void OnDestroy()
     {
-        DOTween.Kill(this);
+        DOTween.Kill(roulettePanel?.transform);
+        DOTween.Kill(arrowTransform);
+        DOTween.Kill(resultText?.transform);
     }
 }
