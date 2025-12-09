@@ -441,6 +441,11 @@ public class FightController : MonoBehaviour
     public int GetPlayerHealth() => playerHealth;
     public int GetBotHealth() => botHealth;
     public bool IsFightActive() => isFightActive;
+
+    public void SwitchToFightCamera()
+    {
+        SwitchCamera(cameraPos2);
+    }
     
     void OnDestroy()
     {

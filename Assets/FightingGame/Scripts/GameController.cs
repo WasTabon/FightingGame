@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject[] _canvasObjects;
     [SerializeField] private GameObject _player;
     [SerializeField] private UIController uiController;
+    [SerializeField] private FightController fightController;
 
     private Transform panelChild;
     private TextMeshProUGUI searchText;
@@ -135,15 +136,7 @@ public class GameController : MonoBehaviour
             carAnimationController.StopIdleAnimation();
         }
 
-        if (virtualCamera1 != null)
-        {
-            virtualCamera1.gameObject.SetActive(false);
-        }
-
-        if (virtualCamera2 != null)
-        {
-            virtualCamera2.gameObject.SetActive(true);
-        }
+        SwitchToCamera(virtualCamera2);
 
         if (car != null && carPoint2 != null)
         {
@@ -153,6 +146,11 @@ public class GameController : MonoBehaviour
                 {
                     _player.SetActive(true);
                     
+                    if (fightController != null)
+                    {
+                        fightController.SwitchToFightCamera();
+                    }
+                    
                     if (uiController != null)
                     {
                         uiController.ShowCardsPanel();
@@ -161,6 +159,14 @@ public class GameController : MonoBehaviour
                     car.DOMove(carPoint1.position, carMoveDuration);
                 });
         }
+    }
+
+    void SwitchToCamera(CinemachineVirtualCamera targetCamera)
+    {
+        if (virtualCamera1 != null) virtualCamera1.Priority = 0;
+        if (virtualCamera2 != null) virtualCamera2.Priority = 0;
+        
+        if (targetCamera != null) targetCamera.Priority = 10;
     }
 
     void OnDestroy()
