@@ -9,19 +9,37 @@ public class CarAnimationController : MonoBehaviour
     private Vector3 originalRotation;
     private Vector3 originalScale;
     private Sequence idleSequence;
+    private bool isInitialized = false;
 
     void Start()
     {
+        Initialize();
+        StartIdleAnimation();
+    }
+
+    void Initialize()
+    {
+        if (isInitialized) return;
+
         if (animatedChild != null)
         {
             originalRotation = animatedChild.localEulerAngles;
             originalScale = animatedChild.localScale;
-            StartIdleAnimation();
+            isInitialized = true;
         }
     }
 
-    void StartIdleAnimation()
+    public void StartIdleAnimation()
     {
+        Initialize();
+
+        if (animatedChild == null) return;
+
+        StopIdleAnimation();
+
+        animatedChild.localEulerAngles = originalRotation;
+        animatedChild.localScale = originalScale;
+
         idleSequence = DOTween.Sequence();
         
         idleSequence.Append(animatedChild.DOLocalRotate(new Vector3(originalRotation.x, originalRotation.y, -10), animationDuration));
@@ -44,6 +62,7 @@ public class CarAnimationController : MonoBehaviour
         if (idleSequence != null)
         {
             idleSequence.Kill();
+            idleSequence = null;
         
             if (animatedChild != null)
             {
@@ -51,6 +70,19 @@ public class CarAnimationController : MonoBehaviour
                 animatedChild.localScale = originalScale;
             }
         }
+    }
+
+    void OnEnable()
+    {
+        if (isInitialized)
+        {
+            StartIdleAnimation();
+        }
+    }
+
+    void OnDisable()
+    {
+        StopIdleAnimation();
     }
     
     void OnDestroy()

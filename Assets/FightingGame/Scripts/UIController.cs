@@ -13,6 +13,7 @@ public class UIController : MonoBehaviour
 
     private Vector3 cardsPanelOriginalPosition;
     private Transform[] cardChildren;
+    private Coroutine showCardsCoroutine;
 
     void Start()
     {
@@ -75,7 +76,7 @@ public class UIController : MonoBehaviour
             .OnComplete(() =>
             {
                 Debug.Log("[UIController] Cards panel slide complete, showing cards");
-                StartCoroutine(ShowCardsSequentially());
+                showCardsCoroutine = StartCoroutine(ShowCardsSequentially());
             });
     }
 
@@ -106,11 +107,19 @@ public class UIController : MonoBehaviour
         {
             Debug.LogError("[UIController] fightController is NULL! Cannot start fight!");
         }
+
+        showCardsCoroutine = null;
     }
 
     public void HideCardsPanel()
     {
         if (cardsPanel == null) return;
+
+        if (showCardsCoroutine != null)
+        {
+            StopCoroutine(showCardsCoroutine);
+            showCardsCoroutine = null;
+        }
 
         cardsPanel.transform.DOLocalMove(cardsPanelOriginalPosition + Vector3.down * slideDistance, slideAnimationDuration)
             .SetEase(Ease.InQuad)
@@ -120,8 +129,41 @@ public class UIController : MonoBehaviour
             });
     }
 
+    public void ResetToInitialState()
+    {
+        Debug.Log("[UIController] ResetToInitialState called");
+
+        if (showCardsCoroutine != null)
+        {
+            StopCoroutine(showCardsCoroutine);
+            showCardsCoroutine = null;
+        }
+
+        DOTween.Kill(cardsPanel?.transform);
+
+        if (cardsPanel != null)
+        {
+            cardsPanel.transform.localPosition = cardsPanelOriginalPosition + Vector3.down * slideDistance;
+            cardsPanel.SetActive(false);
+
+            foreach (Transform child in cardChildren)
+            {
+                if (child != null)
+                {
+                    child.gameObject.SetActive(false);
+                    child.localScale = Vector3.one;
+                }
+            }
+        }
+    }
+
     void OnDestroy()
     {
+        if (showCardsCoroutine != null)
+        {
+            StopCoroutine(showCardsCoroutine);
+        }
+
         DOTween.Kill(this);
     }
 }

@@ -23,11 +23,13 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject _player;
     [SerializeField] private UIController uiController;
     [SerializeField] private FightController fightController;
+    [SerializeField] private InitialCameraSwitcher initialCameraSwitcher;
 
     private Transform panelChild;
     private TextMeshProUGUI searchText;
     private Vector3 panelChildOriginalPosition;
     private Coroutine dotsAnimationCoroutine;
+    private Vector3 carOriginalPosition;
 
     void Start()
     {
@@ -46,6 +48,11 @@ public class GameController : MonoBehaviour
                 PreparePanelAnimation();
             }
             findMatchPanel.SetActive(false);
+        }
+
+        if (car != null)
+        {
+            carOriginalPosition = car.position;
         }
 
         _player.SetActive(false);
@@ -158,6 +165,91 @@ public class GameController : MonoBehaviour
                     
                     car.DOMove(carPoint1.position, carMoveDuration);
                 });
+        }
+    }
+
+    public void ReturnToMainMenu()
+    {
+        Debug.Log("[GameController] ReturnToMainMenu called");
+
+        if (fightController != null)
+        {
+            fightController.HideAllPanels(() =>
+            {
+                StartReturnSequence();
+            });
+        }
+        else
+        {
+            StartReturnSequence();
+        }
+    }
+
+    void StartReturnSequence()
+    {
+        if (car != null && carPoint2 != null)
+        {
+            car.DOMove(carPoint2.position, carMoveDuration)
+                .SetEase(Ease.InOutQuad)
+                .OnComplete(() =>
+                {
+                    _player.SetActive(false);
+
+                    if (fightController != null)
+                    {
+                        fightController.ResetToInitialState();
+                    }
+
+                    if (initialCameraSwitcher != null)
+                    {
+                        initialCameraSwitcher.SwitchToInitialCamera();
+                    }
+                    else
+                    {
+                        SwitchToCamera(virtualCamera1);
+                    }
+
+                    if (car != null && carPoint1 != null)
+                    {
+                        car.DOMove(carPoint1.position, carMoveDuration)
+                            .SetEase(Ease.InOutQuad)
+                            .OnComplete(() =>
+                            {
+                                OnReturnComplete();
+                            });
+                    }
+                    else
+                    {
+                        OnReturnComplete();
+                    }
+                });
+        }
+        else
+        {
+            OnReturnComplete();
+        }
+    }
+
+    void OnReturnComplete()
+    {
+        Debug.Log("[GameController] OnReturnComplete");
+
+        if (uiController != null)
+        {
+            uiController.ResetToInitialState();
+        }
+
+        foreach (GameObject canvasObject in _canvasObjects)
+        {
+            if (canvasObject != null)
+            {
+                canvasObject.SetActive(true);
+            }
+        }
+
+        if (carAnimationController != null)
+        {
+            carAnimationController.StartIdleAnimation();
         }
     }
 

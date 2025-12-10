@@ -5,6 +5,7 @@ using Cinemachine;
 using HighlightPlus;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class FightController : MonoBehaviour
 {
@@ -81,6 +82,13 @@ public class FightController : MonoBehaviour
     
     private int pendingDamage;
     private bool pendingDamageToPlayer;
+
+    private Vector3 playerColliderOriginalCenter;
+    private Vector3 botColliderOriginalCenter;
+    private Vector3 playerOriginalPosition;
+    private Vector3 botOriginalPosition;
+
+    public event Action<bool> OnFightEnded;
     
     void Start()
     {
@@ -89,6 +97,7 @@ public class FightController : MonoBehaviour
         InitializeCards();
         InitializeCardButtons();
         InitializeHighlightEffects();
+        SaveOriginalStates();
         
         if (player != null) playerOriginalPos = player.position;
         if (bot != null) botOriginalPos = bot.position;
@@ -98,6 +107,29 @@ public class FightController : MonoBehaviour
         {
             healthPanelOriginalPos = healthPanel.transform.localPosition;
             healthPanel.transform.localPosition = healthPanelOriginalPos + Vector3.up * healthPanelSlideDistance;
+        }
+    }
+
+    void SaveOriginalStates()
+    {
+        if (player != null)
+        {
+            playerOriginalPosition = player.position;
+        }
+
+        if (bot != null)
+        {
+            botOriginalPosition = bot.position;
+        }
+
+        if (playerCollider != null)
+        {
+            playerColliderOriginalCenter = playerCollider.center;
+        }
+
+        if (botCollider != null)
+        {
+            botColliderOriginalCenter = botCollider.center;
         }
     }
     
@@ -240,7 +272,7 @@ public class FightController : MonoBehaviour
         List<CardData> attackCards = cards.FindAll(c => !c.isDefense);
         if (attackCards.Count == 0) return;
         
-        CardData botCard = attackCards[Random.Range(0, attackCards.Count)];
+        CardData botCard = attackCards[UnityEngine.Random.Range(0, attackCards.Count)];
         Debug.Log($"[FightController] Bot selected: {botCard.cardName}");
         
         rouletteController.Spin(false, botCard.baseDamage, (multiplier, finalDamage) =>
@@ -395,11 +427,18 @@ public class FightController : MonoBehaviour
         }
         
         isFightActive = false;
+
+        bool playerWon = !isPlayer;
         
-        if (!isPlayer && WalletController.Instance != null)
+        if (playerWon && WalletController.Instance != null)
         {
             WalletController.Instance.OnPlayerWin();
         }
+
+        DOVirtual.DelayedCall(1.5f, () =>
+        {
+            OnFightEnded?.Invoke(playerWon);
+        });
     }
     
     void OnAttackComplete(bool wasPlayerAttacking)
@@ -557,6 +596,95 @@ public class FightController : MonoBehaviour
     public void SwitchToFightCamera()
     {
         SwitchCamera(cameraPos2);
+    }
+
+    public void ResetToInitialState()
+    {
+        Debug.Log("[FightController] ResetToInitialState called");
+
+        isFightActive = false;
+        isPlayerTurn = false;
+        defenseMultiplier = 1f;
+        pendingDamage = 0;
+        playerHealth = maxHealth;
+        botHealth = maxHealth;
+
+        if (player != null)
+        {
+            player.position = playerOriginalPosition;
+        }
+
+        if (bot != null)
+        {
+            bot.position = botOriginalPosition;
+        }
+
+        if (playerCollider != null)
+        {
+            playerCollider.center = playerColliderOriginalCenter;
+        }
+
+        if (botCollider != null)
+        {
+            botCollider.center = botColliderOriginalCenter;
+        }
+
+        if (playerAnimator != null)
+        {
+            playerAnimator.CrossFade(idleAnimationState, 0.1f);
+        }
+
+        if (botAnimator != null)
+        {
+            botAnimator.CrossFade(idleAnimationState, 0.1f);
+        }
+
+        UpdateHealthUI(playerHealthImage, 1f);
+        UpdateHealthUI(botHealthImage, 1f);
+
+        if (healthPanel != null)
+        {
+            healthPanel.transform.localPosition = healthPanelOriginalPos + Vector3.up * healthPanelSlideDistance;
+        }
+
+        if (cardsPanel != null)
+        {
+            cardsPanel.transform.localPosition = cardsPanelOriginalPos + Vector3.down * cardsPanelSlideDistance;
+        }
+
+        SetCardsInteractable(false);
+    }
+
+    public void HideAllPanels(Action onComplete = null)
+    {
+        int panelsToHide = 0;
+        int panelsHidden = 0;
+
+        Action checkComplete = () =>
+        {
+            panelsHidden++;
+            if (panelsHidden >= panelsToHide)
+            {
+                onComplete?.Invoke();
+            }
+        };
+
+        if (healthPanel != null && healthPanel.transform.localPosition != healthPanelOriginalPos + Vector3.up * healthPanelSlideDistance)
+        {
+            panelsToHide++;
+            HideHealthPanel(checkComplete);
+        }
+
+        if (cardsPanel != null && cardsPanel.transform.localPosition != cardsPanelOriginalPos + Vector3.down * cardsPanelSlideDistance)
+        {
+            panelsToHide++;
+            HideCardsPanel(checkComplete);
+        }
+
+        if (panelsToHide == 0)
+        {
+            onComplete?.Invoke();
+        }
     }
     
     void OnDestroy()
