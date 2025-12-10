@@ -279,7 +279,7 @@ public class FightController : MonoBehaviour
             int finalDamage = calculatedDamage;
             HighlightEffect defenderEffect = isPlayerAttacking ? botHighlightEffect : playerHighlightEffect;
             
-            if (!isPlayerAttacking && defenseMultiplier < 1f)  // ← только если игрок ВЫБРАЛ защиту и получил бонус
+            if (!isPlayerAttacking && defenseMultiplier < 1f)
             {
                 finalDamage = Mathf.RoundToInt(calculatedDamage * (1f - defenseMultiplier));
                 defenderAnimator.CrossFade("Right Block New", 0.05f);
@@ -357,7 +357,7 @@ public class FightController : MonoBehaviour
             {
                 Animator targetAnimator = pendingDamageToPlayer ? playerAnimator : botAnimator;
                 BoxCollider targetCollider = pendingDamageToPlayer ? playerCollider : botCollider;
-                OnFighterDeath(targetAnimator, targetCollider);
+                OnFighterDeath(targetAnimator, targetCollider, pendingDamageToPlayer);
             }
             onComplete?.Invoke();
         });
@@ -382,9 +382,9 @@ public class FightController : MonoBehaviour
             healthImage.fillAmount = fillAmount;
     }
     
-    void OnFighterDeath(Animator animator, BoxCollider collider)
+    void OnFighterDeath(Animator animator, BoxCollider collider, bool isPlayer)
     {
-        Debug.Log("[FightController] Fighter died!");
+        Debug.Log($"[FightController] Fighter died! isPlayer: {isPlayer}");
         animator.CrossFade(deathAnimationState, 0.1f);
         
         if (collider != null)
@@ -395,6 +395,11 @@ public class FightController : MonoBehaviour
         }
         
         isFightActive = false;
+        
+        if (!isPlayer && WalletController.Instance != null)
+        {
+            WalletController.Instance.OnPlayerWin();
+        }
     }
     
     void OnAttackComplete(bool wasPlayerAttacking)

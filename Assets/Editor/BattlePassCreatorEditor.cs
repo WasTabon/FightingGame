@@ -344,6 +344,9 @@ public class BattlePassCreatorEditor : EditorWindow
         Image bg = reward.AddComponent<Image>();
         bg.color = new Color(0.15f, 0.15f, 0.15f, 0.9f);
         
+        Button button = reward.AddComponent<Button>();
+        button.targetGraphic = bg;
+        
         GameObject iconObj = new GameObject("Icon");
         iconObj.transform.SetParent(reward.transform, false);
         RectTransform iconRect = iconObj.AddComponent<RectTransform>();
@@ -435,6 +438,38 @@ public class BattlePassCreatorEditor : EditorWindow
         
         checkMark.SetActive(false);
         
+        BattlePassReward rewardComponent = reward.AddComponent<BattlePassReward>();
+        
+        System.Reflection.FieldInfo buttonField = typeof(BattlePassReward).GetField("button", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        System.Reflection.FieldInfo iconField = typeof(BattlePassReward).GetField("iconImage", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        System.Reflection.FieldInfo amountTextField = typeof(BattlePassReward).GetField("amountText", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        System.Reflection.FieldInfo lockField = typeof(BattlePassReward).GetField("lockOverlay", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        System.Reflection.FieldInfo checkField = typeof(BattlePassReward).GetField("checkMark", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        System.Reflection.FieldInfo bgField = typeof(BattlePassReward).GetField("backgroundImage", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        System.Reflection.FieldInfo typeField = typeof(BattlePassReward).GetField("rewardType", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        System.Reflection.FieldInfo amountField = typeof(BattlePassReward).GetField("amount", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        
+        if (buttonField != null) buttonField.SetValue(rewardComponent, button);
+        if (iconField != null) iconField.SetValue(rewardComponent, iconImage);
+        if (amountTextField != null) amountTextField.SetValue(rewardComponent, label);
+        if (lockField != null) lockField.SetValue(rewardComponent, lockOverlay);
+        if (checkField != null) checkField.SetValue(rewardComponent, checkMark);
+        if (bgField != null) bgField.SetValue(rewardComponent, bg);
+        
+        if (typeField != null)
+        {
+            if (name.Contains("Coins")) typeField.SetValue(rewardComponent, RewardType.Coins);
+            else if (name.Contains("Gems")) typeField.SetValue(rewardComponent, RewardType.Gems);
+            else if (name.Contains("Skins")) typeField.SetValue(rewardComponent, RewardType.Skin);
+        }
+        
+        if (amountField != null)
+        {
+            if (name.Contains("Coins")) amountField.SetValue(rewardComponent, 50);
+            else if (name.Contains("Gems")) amountField.SetValue(rewardComponent, 10);
+            else if (name.Contains("Skins")) amountField.SetValue(rewardComponent, 1);
+        }
+        
         string prefabPath = $"{prefabsPath}/{name}.prefab";
         GameObject prefab = PrefabUtility.SaveAsPrefabAsset(reward, prefabPath);
         DestroyImmediate(reward);
@@ -507,6 +542,14 @@ public class BattlePassCreatorEditor : EditorWindow
         Image premIconImage = premiumIcon.AddComponent<Image>();
         premIconImage.color = new Color(1f, 0.84f, 0f);
         
+        BattlePassLevel levelComponent = level.AddComponent<BattlePassLevel>();
+        
+        System.Reflection.FieldInfo levelNumField = typeof(BattlePassLevel).GetField("levelNumber", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        System.Reflection.FieldInfo levelTextField = typeof(BattlePassLevel).GetField("levelText", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        
+        if (levelNumField != null) levelNumField.SetValue(levelComponent, 1);
+        if (levelTextField != null) levelTextField.SetValue(levelComponent, levelLabel);
+        
         string prefabPath = $"{prefabsPath}/BattlePassLevel.prefab";
         GameObject prefab = PrefabUtility.SaveAsPrefabAsset(level, prefabPath);
         DestroyImmediate(level);
@@ -532,6 +575,41 @@ public class BattlePassCreatorEditor : EditorWindow
         GameObject progressBar = CreateProgressBar(battlePass.transform);
         GameObject scrollArea = CreateScrollArea(battlePass.transform, levelPrefab, coinsPrefab, gemsPrefab, skinsPrefab);
         GameObject footer = CreateFooter(battlePass.transform);
+        
+        GameObject rewardPanel = CreateRewardClaimedPanel(battlePass.transform);
+        
+        BattlePassController controller = battlePass.AddComponent<BattlePassController>();
+        
+        Transform content = scrollArea.transform.Find("Viewport/Content");
+        ScrollRect scrollRect = scrollArea.GetComponent<ScrollRect>();
+        
+        System.Reflection.FieldInfo levelsField = typeof(BattlePassController).GetField("levelsContainer", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        System.Reflection.FieldInfo scrollField = typeof(BattlePassController).GetField("scrollRect", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        System.Reflection.FieldInfo panelField = typeof(BattlePassController).GetField("rewardClaimedPanel", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        System.Reflection.FieldInfo panelTextField = typeof(BattlePassController).GetField("rewardClaimedText", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        System.Reflection.FieldInfo panelIconField = typeof(BattlePassController).GetField("rewardClaimedIcon", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        
+        if (levelsField != null && content != null) levelsField.SetValue(controller, content);
+        if (scrollField != null && scrollRect != null) scrollField.SetValue(controller, scrollRect);
+        if (panelField != null) panelField.SetValue(controller, rewardPanel);
+        
+        Transform panelText = rewardPanel.transform.Find("Text");
+        Transform panelIcon = rewardPanel.transform.Find("Icon");
+        
+        if (panelTextField != null && panelText != null) panelTextField.SetValue(controller, panelText.GetComponent<TextMeshProUGUI>());
+        if (panelIconField != null && panelIcon != null) panelIconField.SetValue(controller, panelIcon.GetComponent<Image>());
+        
+        Sprite coinsSprite = AssetDatabase.LoadAssetAtPath<Sprite>($"{prefabsPath}/Textures/CoinsIcon.png");
+        Sprite gemsSprite = AssetDatabase.LoadAssetAtPath<Sprite>($"{prefabsPath}/Textures/GemsIcon.png");
+        Sprite skinsSprite = AssetDatabase.LoadAssetAtPath<Sprite>($"{prefabsPath}/Textures/SkinsIcon.png");
+        
+        System.Reflection.FieldInfo coinsIconField = typeof(BattlePassController).GetField("coinsIcon", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        System.Reflection.FieldInfo gemsIconField = typeof(BattlePassController).GetField("gemsIcon", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        System.Reflection.FieldInfo skinsIconField = typeof(BattlePassController).GetField("skinsIcon", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        
+        if (coinsIconField != null) coinsIconField.SetValue(controller, coinsSprite);
+        if (gemsIconField != null) gemsIconField.SetValue(controller, gemsSprite);
+        if (skinsIconField != null) skinsIconField.SetValue(controller, skinsSprite);
         
         return battlePass;
     }
@@ -759,6 +837,8 @@ public class BattlePassCreatorEditor : EditorWindow
             GameObject level = (GameObject)PrefabUtility.InstantiatePrefab(levelPrefab, content);
             level.name = $"Level_{i + 1}";
             
+            BattlePassLevel levelComp = level.GetComponent<BattlePassLevel>();
+            
             Transform levelNumText = level.transform.Find("LevelNumber/Text");
             if (levelNumText != null)
             {
@@ -769,6 +849,9 @@ public class BattlePassCreatorEditor : EditorWindow
                 }
             }
             
+            BattlePassReward freeRewardComp = null;
+            BattlePassReward premiumRewardComp = null;
+            
             Transform freeSlot = level.transform.Find("FreeRewardSlot");
             if (freeSlot != null)
             {
@@ -777,6 +860,8 @@ public class BattlePassCreatorEditor : EditorWindow
                 rewardRect.anchorMin = new Vector2(0.5f, 0.5f);
                 rewardRect.anchorMax = new Vector2(0.5f, 0.5f);
                 rewardRect.anchoredPosition = Vector2.zero;
+                
+                freeRewardComp = freeReward.GetComponent<BattlePassReward>();
             }
             
             Transform premiumSlot = level.transform.Find("PremiumRewardSlot");
@@ -787,6 +872,19 @@ public class BattlePassCreatorEditor : EditorWindow
                 rewardRect.anchorMin = new Vector2(0.5f, 0.5f);
                 rewardRect.anchorMax = new Vector2(0.5f, 0.5f);
                 rewardRect.anchoredPosition = Vector2.zero;
+                
+                premiumRewardComp = premiumReward.GetComponent<BattlePassReward>();
+            }
+            
+            if (levelComp != null)
+            {
+                System.Reflection.FieldInfo levelNumField = typeof(BattlePassLevel).GetField("levelNumber", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                System.Reflection.FieldInfo freeField = typeof(BattlePassLevel).GetField("freeReward", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                System.Reflection.FieldInfo premField = typeof(BattlePassLevel).GetField("premiumReward", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                
+                if (levelNumField != null) levelNumField.SetValue(levelComp, i + 1);
+                if (freeField != null) freeField.SetValue(levelComp, freeRewardComp);
+                if (premField != null) premField.SetValue(levelComp, premiumRewardComp);
             }
         }
     }
@@ -854,5 +952,48 @@ public class BattlePassCreatorEditor : EditorWindow
         premText.color = Color.white;
         
         return footer;
+    }
+    
+    GameObject CreateRewardClaimedPanel(Transform parent)
+    {
+        GameObject panel = new GameObject("RewardClaimedPanel");
+        panel.transform.SetParent(parent, false);
+        
+        RectTransform rect = panel.AddComponent<RectTransform>();
+        rect.anchorMin = new Vector2(0.5f, 0.5f);
+        rect.anchorMax = new Vector2(0.5f, 0.5f);
+        rect.sizeDelta = new Vector2(300, 150);
+        
+        Image bg = panel.AddComponent<Image>();
+        bg.color = new Color(0.1f, 0.1f, 0.15f, 0.95f);
+        
+        GameObject iconObj = new GameObject("Icon");
+        iconObj.transform.SetParent(panel.transform, false);
+        RectTransform iconRect = iconObj.AddComponent<RectTransform>();
+        iconRect.anchorMin = new Vector2(0.5f, 0.6f);
+        iconRect.anchorMax = new Vector2(0.5f, 0.6f);
+        iconRect.sizeDelta = new Vector2(60, 60);
+        
+        Image iconImage = iconObj.AddComponent<Image>();
+        iconImage.color = Color.white;
+        
+        GameObject textObj = new GameObject("Text");
+        textObj.transform.SetParent(panel.transform, false);
+        RectTransform textRect = textObj.AddComponent<RectTransform>();
+        textRect.anchorMin = new Vector2(0, 0);
+        textRect.anchorMax = new Vector2(1, 0.4f);
+        textRect.offsetMin = new Vector2(10, 10);
+        textRect.offsetMax = new Vector2(-10, 0);
+        
+        TextMeshProUGUI text = textObj.AddComponent<TextMeshProUGUI>();
+        text.text = "+100 Coins";
+        text.fontSize = 24;
+        text.fontStyle = FontStyles.Bold;
+        text.alignment = TextAlignmentOptions.Center;
+        text.color = Color.white;
+        
+        panel.SetActive(false);
+        
+        return panel;
     }
 }

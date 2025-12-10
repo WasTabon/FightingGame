@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 340, y: 190}
+  m_SizeDelta: {x: 340, y: 210}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &842421179168491436
 CanvasRenderer:
@@ -85,6 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6940247274695734605}
   - component: {fileID: 2320411752626809340}
+  - component: {fileID: 5202486904272789968}
   m_Layer: 0
   m_Name: BattlePassLevel
   m_TagString: Untagged
@@ -140,6 +141,22 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &5202486904272789968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037920972854627830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cb0b3fcce44d4e4498e0389f6da0f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelNumber: 1
+  levelText: {fileID: 5874206306152860394}
+  freeReward: {fileID: 0}
+  premiumReward: {fileID: 0}
 --- !u!1 &1170835813986797523
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +193,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 340, y: 190}
+  m_SizeDelta: {x: 340, y: 210}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4736954486410989433
 CanvasRenderer:
