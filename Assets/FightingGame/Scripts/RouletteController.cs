@@ -12,6 +12,7 @@ public class RouletteController : MonoBehaviour
     [SerializeField] private Image rouletteWheel;
     [SerializeField] private RectTransform arrowTransform;
     [SerializeField] private TextMeshProUGUI resultText;
+    [SerializeField] private TextMeshProUGUI damageText;
     
     [Header("Zones Configuration")]
     [SerializeField] private List<RouletteZone> zones = new List<RouletteZone>();
@@ -31,8 +32,10 @@ public class RouletteController : MonoBehaviour
     [SerializeField] private string[] defenseBadTexts = { "PARTIAL BLOCK...", "GRAZED...", "SLIPPED!" };
     
     private float[] zoneStartAngles;
-    private Action<float> onSpinComplete;
+    private Action<float, int> onSpinComplete;
     private bool isInitialized = false;
+    private int currentBaseDamage;
+    private bool currentIsDefense;
     
     void Awake()
     {
@@ -44,9 +47,6 @@ public class RouletteController : MonoBehaviour
         if (isInitialized) return;
         
         Debug.Log($"[RouletteController] Initialize called");
-        Debug.Log($"[RouletteController] roulettePanel null: {roulettePanel == null}");
-        Debug.Log($"[RouletteController] arrowTransform null: {arrowTransform == null}");
-        Debug.Log($"[RouletteController] zones count: {zones.Count}");
         
         CalculateZoneAngles();
         
@@ -74,22 +74,23 @@ public class RouletteController : MonoBehaviour
         {
             zoneStartAngles[i] = currentAngle;
             currentAngle += zones[i].angleSize;
-            Debug.Log($"[RouletteController] Zone {i}: {zones[i].zoneName}, start: {zoneStartAngles[i]}, size: {zones[i].angleSize}");
         }
     }
     
-    public void Spin(bool isDefense, Action<float> callback)
+    public void Spin(bool isDefense, int baseDamage, Action<float, int> callback)
     {
         Initialize();
         
-        Debug.Log($"[RouletteController] Spin called, isDefense: {isDefense}, callback null: {callback == null}");
+        Debug.Log($"[RouletteController] Spin called, isDefense: {isDefense}, baseDamage: {baseDamage}");
         
         onSpinComplete = callback;
+        currentBaseDamage = baseDamage;
+        currentIsDefense = isDefense;
         
         if (roulettePanel == null)
         {
             Debug.LogError("[RouletteController] roulettePanel is NULL!");
-            callback?.Invoke(1f);
+            callback?.Invoke(1f, baseDamage);
             return;
         }
 
@@ -109,11 +110,16 @@ public class RouletteController : MonoBehaviour
             resultText.transform.localScale = Vector3.zero;
         }
         
+        if (damageText != null)
+        {
+            damageText.text = "";
+            damageText.transform.localScale = Vector3.zero;
+        }
+        
         roulettePanel.transform.DOScale(Vector3.one, 0.3f)
             .SetEase(Ease.OutBack)
             .OnComplete(() =>
             {
-                Debug.Log("[RouletteController] Panel scaled, starting spin");
                 StartSpinAnimation(isDefense);
             });
     }
@@ -124,44 +130,38 @@ public class RouletteController : MonoBehaviour
         int rotations = UnityEngine.Random.Range(minRotations, maxRotations + 1);
         float totalRotation = rotations * 360f + randomAngle;
         
-        Debug.Log($"[RouletteController] Random angle: {randomAngle}, rotations: {rotations}, total: {totalRotation}");
-        
         if (arrowTransform != null)
         {
-            Debug.Log("[RouletteController] Starting arrow rotation");
             arrowTransform.DOLocalRotate(new Vector3(0, 0, -totalRotation), spinDuration, RotateMode.FastBeyond360)
                 .SetEase(Ease.OutQuart)
                 .OnComplete(() => 
                 {
-                    Debug.Log("[RouletteController] Arrow rotation complete");
                     OnSpinFinished(randomAngle, isDefense);
                 });
         }
         else
         {
             Debug.LogError("[RouletteController] arrowTransform is NULL!");
-            onSpinComplete?.Invoke(1f);
+            onSpinComplete?.Invoke(1f, currentBaseDamage);
         }
     }
     
     void OnSpinFinished(float finalAngle, bool isDefense)
     {
-        Debug.Log($"[RouletteController] OnSpinFinished, finalAngle: {finalAngle}");
-        
         float multiplier = GetMultiplierForAngle(finalAngle);
         int zoneIndex = GetZoneIndexForAngle(finalAngle);
         
-        Debug.Log($"[RouletteController] Multiplier: {multiplier}, zoneIndex: {zoneIndex}");
+        int finalDamage = Mathf.RoundToInt(currentBaseDamage * multiplier);
         
-        ShowResultText(zoneIndex, isDefense);
+        Debug.Log($"[RouletteController] Multiplier: {multiplier}, finalDamage: {finalDamage}");
+        
+        ShowResultText(zoneIndex, isDefense, multiplier, finalDamage);
         
         DOVirtual.DelayedCall(resultTextDuration + 0.5f, () =>
         {
-            Debug.Log("[RouletteController] Hiding roulette");
             HideRoulette(() => 
             {
-                Debug.Log("[RouletteController] Invoking callback with multiplier: " + multiplier);
-                onSpinComplete?.Invoke(multiplier);
+                onSpinComplete?.Invoke(multiplier, finalDamage);
             });
         });
     }
@@ -180,7 +180,6 @@ public class RouletteController : MonoBehaviour
             currentAngle += zones[i].angleSize;
         }
         
-        Debug.LogWarning($"[RouletteController] Could not find zone for angle {angle}, returning 1");
         return 1f;
     }
     
@@ -201,13 +200,12 @@ public class RouletteController : MonoBehaviour
         return 0;
     }
     
-    void ShowResultText(int zoneIndex, bool isDefense)
+    void ShowResultText(int zoneIndex, bool isDefense, float multiplier, int finalDamage)
     {
         if (resultText == null || zones.Count == 0) return;
         
         string[] textArray;
         Color textColor = zones[zoneIndex].zoneColor;
-        float multiplier = zones[zoneIndex].damageMultiplier;
         
         if (isDefense)
         {
@@ -231,6 +229,23 @@ public class RouletteController : MonoBehaviour
         
         resultText.transform.DOShakeRotation(0.5f, new Vector3(0, 0, 15), 10, 90, true)
             .SetDelay(0.3f);
+        
+        if (damageText != null)
+        {
+            if (isDefense)
+            {
+                int blockPercent = Mathf.RoundToInt(multiplier * 100f);
+                damageText.text = $"-{blockPercent}% DMG";
+            }
+            else
+            {
+                damageText.text = $"{finalDamage} DMG";
+            }
+            
+            damageText.color = textColor;
+            damageText.transform.localScale = Vector3.zero;
+            damageText.transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.OutBack).SetDelay(0.2f);
+        }
     }
     
     void HideRoulette(Action onComplete)
@@ -261,5 +276,6 @@ public class RouletteController : MonoBehaviour
         DOTween.Kill(roulettePanel?.transform);
         DOTween.Kill(arrowTransform);
         DOTween.Kill(resultText?.transform);
+        DOTween.Kill(damageText?.transform);
     }
 }
