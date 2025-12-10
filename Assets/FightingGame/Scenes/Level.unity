@@ -280,6 +280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -384,6 +388,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -587,6 +595,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -907,6 +919,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -932,6 +948,140 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed74152e32b99404a945b15dc5830b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &36889320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 36889321}
+  - component: {fileID: 36889323}
+  - component: {fileID: 36889322}
+  m_Layer: 0
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &36889321
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36889320}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1103405969}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &36889322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36889320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: CLOSE
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 40
+  m_fontSizeBase: 40
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &36889323
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36889320}
+  m_CullTransparentMesh: 1
 --- !u!1001 &40598010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1349,6 +1499,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1608,6 +1762,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 38
       objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1823,6 +1981,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2094,6 +2256,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2187,6 +2353,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -2279,6 +2449,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2663,6 +2837,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2702,7 +2880,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3, y: 0}
   m_AnchorMax: {x: 0.6, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.0002746582, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &112531111
@@ -2893,6 +3071,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3271,6 +3453,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3418,6 +3604,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3520,6 +3710,10 @@ PrefabInstance:
     - target: {fileID: 3172470558927651386, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
@@ -3781,6 +3975,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3877,6 +4075,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4070,6 +4272,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4487,6 +4693,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4158911708428277900, guid: b5653e6b9eb53db4fb3df476dd6daa8e, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 4901695905167843391, guid: b5653e6b9eb53db4fb3df476dd6daa8e, type: 3}
       propertyPath: m_Name
       value: SkinsReward
@@ -4579,6 +4789,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4786,6 +5000,10 @@ PrefabInstance:
     - target: {fileID: 3172470558927651386, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
@@ -5859,6 +6077,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6045,6 +6267,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6268,7 +6494,6 @@ RectTransform:
   m_Children:
   - {fileID: 79791888}
   - {fileID: 258609505}
-  - {fileID: 563732205}
   m_Father: {fileID: 2130661979}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -6402,6 +6627,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -6503,6 +6732,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6596,6 +6829,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6945,6 +7182,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7437,6 +7678,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7761,6 +8006,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -7882,6 +8131,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8173,6 +8426,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -8473,6 +8730,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8585,6 +8846,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9090,6 +9355,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9345,6 +9614,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -9686,6 +9959,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -9849,6 +10126,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -10076,6 +10357,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10432,19 +10717,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563732204}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 654722446}
-  m_Father: {fileID: 301891640}
+  m_Father: {fileID: 2130661979}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -20, y: 0}
-  m_SizeDelta: {x: 150, y: 40}
-  m_Pivot: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0.08628205, y: 0.15900001}
+  m_AnchorMax: {x: 0.08628205, y: 0.15900001}
+  m_AnchoredPosition: {x: 2.8847656, y: 0}
+  m_SizeDelta: {x: 322.23096, y: 185.73401}
+  m_Pivot: {x: 0.5000001, y: 0.5}
 --- !u!114 &563732206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10619,6 +10904,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10720,6 +11009,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10825,6 +11118,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -11074,6 +11371,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11162,6 +11463,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -11531,6 +11836,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12020,6 +12329,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -12261,6 +12574,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -13147,6 +13464,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -13818,6 +14139,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -13923,6 +14248,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14216,6 +14545,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14385,6 +14718,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -14762,6 +15099,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -15532,6 +15873,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -15748,6 +16093,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15836,6 +16185,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -16043,6 +16396,10 @@ PrefabInstance:
     - target: {fileID: 3172470558927651386, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
@@ -16396,6 +16753,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16626,6 +16987,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17000,6 +17365,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17109,6 +17478,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -17312,6 +17685,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -17803,6 +18180,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18102,6 +18483,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18510,6 +18895,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18644,6 +19033,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18740,6 +19133,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18915,6 +19312,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19008,6 +19409,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -19216,6 +19621,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -19404,6 +19813,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19663,6 +20076,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4158911708428277900, guid: b5653e6b9eb53db4fb3df476dd6daa8e, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 4901695905167843391, guid: b5653e6b9eb53db4fb3df476dd6daa8e, type: 3}
       propertyPath: m_Name
       value: SkinsReward
@@ -19759,6 +20176,10 @@ PrefabInstance:
     - target: {fileID: 3172470558927651386, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
@@ -19860,6 +20281,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20040,6 +20465,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20194,6 +20623,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -20877,6 +21310,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20965,6 +21402,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -21168,6 +21609,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -21380,6 +21825,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21476,6 +21925,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21726,6 +22179,139 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6940247274695734605, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
   m_PrefabInstance: {fileID: 17827513}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1103405968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1103405969}
+  - component: {fileID: 1103405972}
+  - component: {fileID: 1103405971}
+  - component: {fileID: 1103405970}
+  m_Layer: 0
+  m_Name: CloseButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1103405969
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103405968}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 36889321}
+  m_Father: {fileID: 2130661979}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.91889757, y: 0.79770374}
+  m_AnchorMax: {x: 0.91889757, y: 0.79770374}
+  m_AnchoredPosition: {x: 4, y: -2}
+  m_SizeDelta: {x: 150, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1103405970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103405968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1103405971}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2130661978}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1103405971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103405968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1103405972
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103405968}
+  m_CullTransparentMesh: 1
 --- !u!224 &1105635058 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3172470558927651386, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
@@ -21841,6 +22427,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -22241,6 +22831,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -22514,6 +23108,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22710,6 +23308,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -22806,6 +23408,10 @@ PrefabInstance:
     - target: {fileID: 3172470558927651386, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
@@ -22915,6 +23521,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -23143,6 +23753,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23231,6 +23845,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -24139,6 +24757,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24267,6 +24889,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24560,6 +25186,10 @@ PrefabInstance:
     - target: {fileID: 3172470558927651386, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
@@ -25412,6 +26042,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -25619,6 +26253,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -25907,7 +26545,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.3, y: 1}
-  m_AnchoredPosition: {x: 10, y: 0}
+  m_AnchoredPosition: {x: 10.000122, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1296959311
@@ -26095,6 +26733,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -26380,6 +27022,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -26716,6 +27362,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -26922,8 +27572,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329124944}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.280062, y: 2.085833, z: -2.4650168}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -48.269234, y: 4.8231435, z: -0.11713076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28030,6 +28680,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 34
       objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -28237,6 +28891,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -28548,6 +29206,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 23
       objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -28760,6 +29422,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -28852,6 +29518,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -29068,6 +29738,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29547,6 +30221,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29790,6 +30468,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30004,6 +30686,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -30669,6 +31355,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30895,6 +31585,10 @@ PrefabInstance:
     - target: {fileID: 3172470558927651386, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
@@ -31240,6 +31934,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31611,6 +32309,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32512,6 +33214,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4158911708428277900, guid: b5653e6b9eb53db4fb3df476dd6daa8e, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 4901695905167843391, guid: b5653e6b9eb53db4fb3df476dd6daa8e, type: 3}
       propertyPath: m_Name
       value: SkinsReward
@@ -32625,6 +33331,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -32848,6 +33558,10 @@ PrefabInstance:
     - target: {fileID: 3172470558927651386, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
@@ -33466,6 +34180,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 33
       objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -33672,6 +34390,10 @@ PrefabInstance:
     - target: {fileID: 3172470558927651386, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
@@ -33903,6 +34625,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -33991,6 +34717,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -34238,6 +34968,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -34758,6 +35492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35015,6 +35753,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -35354,6 +36096,10 @@ PrefabInstance:
     - target: {fileID: 3172470558927651386, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
@@ -35824,6 +36570,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 28
       objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -36034,6 +36784,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36443,6 +37197,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36531,6 +37289,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -36944,6 +37706,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -37060,6 +37826,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37258,6 +38028,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -37354,6 +38128,10 @@ PrefabInstance:
     - target: {fileID: 3172470558927651386, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
@@ -37559,6 +38337,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -37683,6 +38465,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -37893,7 +38679,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 18520, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1859679531
 MonoBehaviour:
@@ -38031,6 +38817,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -38186,6 +38976,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -38737,6 +39531,10 @@ PrefabInstance:
     - target: {fileID: 3172470558927651386, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
@@ -39320,6 +40118,10 @@ PrefabInstance:
     - target: {fileID: 3172470558927651386, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
@@ -40179,6 +40981,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -40549,6 +41355,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -40722,6 +41532,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -40890,6 +41704,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4158911708428277900, guid: b5653e6b9eb53db4fb3df476dd6daa8e, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 4901695905167843391, guid: b5653e6b9eb53db4fb3df476dd6daa8e, type: 3}
       propertyPath: m_Name
       value: SkinsReward
@@ -40982,7 +41800,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2130661978}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -41115,6 +41933,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -41435,6 +42257,10 @@ PrefabInstance:
     - target: {fileID: 3172470558927651386, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
@@ -41911,6 +42737,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinsReward
       objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -41991,6 +42821,10 @@ PrefabInstance:
     - target: {fileID: 5487846597616572055, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -330
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -42218,6 +43052,10 @@ PrefabInstance:
     - target: {fileID: 4126632061409436755, guid: ca09cd7596d69994da18798948d90617, type: 3}
       propertyPath: m_Name
       value: CoinsReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026555727889852125, guid: ca09cd7596d69994da18798948d90617, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -42759,6 +43597,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -43032,6 +43874,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -43225,6 +44071,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
@@ -43433,6 +44283,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4158911708428277900, guid: b5653e6b9eb53db4fb3df476dd6daa8e, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 4901695905167843391, guid: b5653e6b9eb53db4fb3df476dd6daa8e, type: 3}
       propertyPath: m_Name
       value: SkinsReward
@@ -43572,7 +44426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2130661979
 RectTransform:
   m_ObjectHideFlags: 0
@@ -43589,6 +44443,8 @@ RectTransform:
   - {fileID: 1197051686}
   - {fileID: 1706609481}
   - {fileID: 86746687}
+  - {fileID: 563732205}
+  - {fileID: 1103405969}
   - {fileID: 628790283}
   m_Father: {fileID: 1480895786}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -43914,6 +44770,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103850940479336058, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5109757367936361903, guid: 42b5d0c7742b3b54092b4fcae9bd4271, type: 3}
       propertyPath: m_Name
       value: GemsReward
@@ -44010,6 +44870,10 @@ PrefabInstance:
     - target: {fileID: 2073047884085577709, guid: b5653e6b9eb53db4fb3df476dd6daa8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158911708428277900, guid: b5653e6b9eb53db4fb3df476dd6daa8e, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 4901695905167843391, guid: b5653e6b9eb53db4fb3df476dd6daa8e, type: 3}
       propertyPath: m_Name
@@ -44169,6 +45033,10 @@ PrefabInstance:
     - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_text
       value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874206306152860394, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 6160709645700198935, guid: e74de3ad1e78dbd44aa254ebf253fe04, type: 3}
       propertyPath: m_AnchorMax.x
