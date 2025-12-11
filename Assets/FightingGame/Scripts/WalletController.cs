@@ -6,6 +6,9 @@ using System;
 public class WalletController : MonoBehaviour
 {
     public static WalletController Instance { get; private set; }
+
+    [SerializeField] private GameObject _panelSucces;
+    [SerializeField] private GameObject _panelNotMoney;
     
     [Header("Currency")]
     [SerializeField] private int coins;
@@ -83,6 +86,29 @@ public class WalletController : MonoBehaviour
         UpdateGemsUI();
         UpdateRankUI();
         UpdateExpUI();
+    }
+
+    public void BuyHealth()
+    {
+        if (SpendCoins(300))
+        {
+            _panelSucces.SetActive(true);
+        }
+        else
+        {
+            _panelNotMoney.SetActive(true);
+        }
+    }
+    public void BuyDamage()
+    {
+        if (SpendGems(50))
+        {
+            _panelSucces.SetActive(true);
+        }
+        else
+        {
+            _panelNotMoney.SetActive(true);
+        }
     }
     
     void UpdateCoinsUI()
