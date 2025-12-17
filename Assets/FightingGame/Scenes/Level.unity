@@ -1697,7 +1697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &50147074
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13376,8 +13376,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 198.9226, y: -145.89}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 156, y: -158.87}
+  m_SizeDelta: {x: 254.3556, y: 225.9572}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &534288315
 MonoBehaviour:
@@ -16153,8 +16153,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 798.9226, y: -145.89}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 832.99994, y: -145.89}
+  m_SizeDelta: {x: 254.3556, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &653551805
 MonoBehaviour:
@@ -17754,7 +17754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &709922415
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34910,8 +34910,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1098.9226, y: -145.89}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 1151, y: -145.89}
+  m_SizeDelta: {x: 254.3556, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1399731687
 MonoBehaviour:
@@ -43560,8 +43560,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 498.9226, y: -145.89}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 495.99994, y: -145.89001}
+  m_SizeDelta: {x: 254.3556, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1751502063
 MonoBehaviour:
@@ -45726,7 +45726,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805828147}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
   m_Name: 
@@ -50632,6 +50632,7 @@ MonoBehaviour:
   - {fileID: 808126901}
   - {fileID: 732783381}
   - {fileID: 308085399}
+  - {fileID: 2035032175}
   _player: {fileID: 5001814652898678751}
   uiController: {fileID: 751207741}
   fightController: {fileID: 726454970}
