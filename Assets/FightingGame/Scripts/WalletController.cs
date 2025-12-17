@@ -34,6 +34,11 @@ public class WalletController : MonoBehaviour
     [SerializeField] private int winRankReward = 30;
     [SerializeField] private int winExpReward = 150;
     
+    [Header("Audio")]
+    [SerializeField] private AudioClip coinsSound;
+    [SerializeField] private AudioClip gemsSound;
+    [SerializeField] private AudioClip levelUpSound;
+    
     private const string COINS_KEY = "Wallet_Coins";
     private const string GEMS_KEY = "Wallet_Gems";
     private const string RANK_KEY = "Wallet_Rank";
@@ -160,6 +165,11 @@ public class WalletController : MonoBehaviour
         UpdateCoinsUI();
         OnCoinsChanged?.Invoke(coins);
         
+        if (amount > 0 && coinsSound != null && MusicController.Instance != null)
+        {
+            MusicController.Instance.PlaySpecificSound(coinsSound);
+        }
+        
         Debug.Log($"[WalletController] Coins: {coins} ({(amount >= 0 ? "+" : "")}{amount})");
     }
     
@@ -171,6 +181,11 @@ public class WalletController : MonoBehaviour
         SaveData();
         UpdateGemsUI();
         OnGemsChanged?.Invoke(gems);
+        
+        if (amount > 0 && gemsSound != null && MusicController.Instance != null)
+        {
+            MusicController.Instance.PlaySpecificSound(gemsSound);
+        }
         
         Debug.Log($"[WalletController] Gems: {gems} ({(amount >= 0 ? "+" : "")}{amount})");
     }
@@ -200,6 +215,12 @@ public class WalletController : MonoBehaviour
             level++;
             levelsGained++;
             OnLevelUp?.Invoke(level);
+            
+            if (levelUpSound != null && MusicController.Instance != null)
+            {
+                MusicController.Instance.PlaySpecificSound(levelUpSound);
+            }
+            
             Debug.Log($"[WalletController] Level Up! Now level {level}");
         }
         

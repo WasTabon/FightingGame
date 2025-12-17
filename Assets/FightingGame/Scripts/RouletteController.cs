@@ -31,6 +31,12 @@ public class RouletteController : MonoBehaviour
     [SerializeField] private string[] defenseNormalTexts = { "BLOCKED!", "DEFENDED!", "GUARDED!" };
     [SerializeField] private string[] defenseBadTexts = { "PARTIAL BLOCK...", "GRAZED...", "SLIPPED!" };
     
+    [Header("Audio")]
+    [SerializeField] private AudioClip spinSound;
+    [SerializeField] private AudioClip criticalResultSound;
+    [SerializeField] private AudioClip normalResultSound;
+    [SerializeField] private AudioClip weakResultSound;
+    
     private float[] zoneStartAngles;
     private Action<float, int> onSpinComplete;
     private bool isInitialized = false;
@@ -130,6 +136,11 @@ public class RouletteController : MonoBehaviour
         int rotations = UnityEngine.Random.Range(minRotations, maxRotations + 1);
         float totalRotation = rotations * 360f + randomAngle;
         
+        if (spinSound != null && MusicController.Instance != null)
+        {
+            MusicController.Instance.PlaySpecificSound(spinSound);
+        }
+        
         if (arrowTransform != null)
         {
             arrowTransform.DOLocalRotate(new Vector3(0, 0, -totalRotation), spinDuration, RotateMode.FastBeyond360)
@@ -206,18 +217,48 @@ public class RouletteController : MonoBehaviour
         
         string[] textArray;
         Color textColor = zones[zoneIndex].zoneColor;
+        AudioClip resultSound = null;
         
         if (isDefense)
         {
-            if (multiplier >= 1.5f) textArray = defenseGoodTexts;
-            else if (multiplier >= 1f) textArray = defenseNormalTexts;
-            else textArray = defenseBadTexts;
+            if (multiplier >= 1.5f)
+            {
+                textArray = defenseGoodTexts;
+                resultSound = criticalResultSound;
+            }
+            else if (multiplier >= 1f)
+            {
+                textArray = defenseNormalTexts;
+                resultSound = normalResultSound;
+            }
+            else
+            {
+                textArray = defenseBadTexts;
+                resultSound = weakResultSound;
+            }
         }
         else
         {
-            if (multiplier >= 1.5f) textArray = criticalTexts;
-            else if (multiplier >= 1f) textArray = normalTexts;
-            else textArray = weakTexts;
+            if (multiplier >= 1.5f)
+            {
+                textArray = criticalTexts;
+                resultSound = criticalResultSound;
+            }
+            else if (multiplier >= 1f)
+            {
+                textArray = normalTexts;
+                resultSound = normalResultSound;
+            }
+            else
+            {
+                textArray = weakTexts;
+                resultSound = weakResultSound;
+            }
+        }
+        
+        if (resultSound != null && MusicController.Instance != null)
+        {
+            MusicController.Instance.PlaySpecificSound(resultSound);
         }
         
         resultText.text = textArray[UnityEngine.Random.Range(0, textArray.Length)];

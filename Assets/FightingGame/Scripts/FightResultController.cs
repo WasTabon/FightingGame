@@ -34,6 +34,10 @@ public class FightResultController : MonoBehaviour
     [SerializeField] private float contentFadeDuration = 0.3f;
     [SerializeField] private float contentDelay = 0.2f;
     
+    [Header("Audio")]
+    [SerializeField] private AudioClip victorySound;
+    [SerializeField] private AudioClip defeatSound;
+    
     [Header("References")]
     [SerializeField] private FightController fightController;
     [SerializeField] private GameController gameController;
@@ -77,6 +81,15 @@ public class FightResultController : MonoBehaviour
     public void ShowResult(bool playerWon)
     {
         if (resultPanel == null) return;
+
+        if (playerWon && victorySound != null && MusicController.Instance != null)
+        {
+            MusicController.Instance.PlaySpecificSound(victorySound);
+        }
+        else if (!playerWon && defeatSound != null && MusicController.Instance != null)
+        {
+            MusicController.Instance.PlaySpecificSound(defeatSound);
+        }
 
         if (titleText != null)
         {

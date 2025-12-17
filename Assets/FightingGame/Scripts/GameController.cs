@@ -25,6 +25,9 @@ public class GameController : MonoBehaviour
     [SerializeField] private FightController fightController;
     [SerializeField] private InitialCameraSwitcher initialCameraSwitcher;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip matchFoundSound;
+
     private Transform panelChild;
     private TextMeshProUGUI searchText;
     private Vector3 panelChildOriginalPosition;
@@ -95,6 +98,11 @@ public class GameController : MonoBehaviour
             if (dotsAnimationCoroutine != null)
             {
                 StopCoroutine(dotsAnimationCoroutine);
+            }
+
+            if (matchFoundSound != null && MusicController.Instance != null)
+            {
+                MusicController.Instance.PlaySpecificSound(matchFoundSound);
             }
 
             HidePanel();

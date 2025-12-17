@@ -67,6 +67,12 @@ public class FightController : MonoBehaviour
     [SerializeField] private float healthPanelSlideDuration = 0.4f;
     [SerializeField] private float healthPanelSlideDistance = 300f;
     
+    [Header("Audio")]
+    [SerializeField] private AudioClip jabSound;
+    [SerializeField] private AudioClip uppercutSound;
+    [SerializeField] private AudioClip specialSound;
+    [SerializeField] private AudioClip blockSound;
+    
     private int playerHealth;
     private int botHealth;
     private bool isPlayerTurn;
@@ -315,10 +321,17 @@ public class FightController : MonoBehaviour
             {
                 finalDamage = Mathf.RoundToInt(calculatedDamage * (1f - defenseMultiplier));
                 defenderAnimator.CrossFade("Right Block New", 0.05f);
+                
+                if (blockSound != null && MusicController.Instance != null)
+                {
+                    MusicController.Instance.PlaySpecificSound(blockSound);
+                }
             }
             else if (!string.IsNullOrEmpty(card.victimAnimationStateName))
             {
                 defenderAnimator.CrossFade(card.victimAnimationStateName, 0.05f);
+                
+                PlayHitSound(card);
             }
             
             if (defenderEffect != null)
@@ -684,6 +697,25 @@ public class FightController : MonoBehaviour
         if (panelsToHide == 0)
         {
             onComplete?.Invoke();
+        }
+    }
+    
+    void PlayHitSound(CardData card)
+    {
+        if (MusicController.Instance == null) return;
+        
+        AudioClip soundToPlay = null;
+        
+        if (card.cardName == "Jab")
+            soundToPlay = jabSound;
+        else if (card.cardName == "Uppercut")
+            soundToPlay = uppercutSound;
+        else if (card.cardName == "Special")
+            soundToPlay = specialSound;
+        
+        if (soundToPlay != null)
+        {
+            MusicController.Instance.PlaySpecificSound(soundToPlay);
         }
     }
     
