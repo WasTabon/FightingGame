@@ -27,6 +27,8 @@ public class GameController : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioClip matchFoundSound;
+    [SerializeField] private AudioClip mainMenuMusic;
+    [SerializeField] private AudioClip fightMusic;
 
     private Transform panelChild;
     private TextMeshProUGUI searchText;
@@ -59,6 +61,8 @@ public class GameController : MonoBehaviour
         }
 
         _player.SetActive(false);
+        
+        PlayMainMenuMusic();
     }
 
     void PreparePanelAnimation()
@@ -161,6 +165,8 @@ public class GameController : MonoBehaviour
                 {
                     _player.SetActive(true);
                     
+                    PlayFightMusic();
+                    
                     if (fightController != null)
                     {
                         fightController.SwitchToFightCamera();
@@ -242,6 +248,8 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("[GameController] OnReturnComplete");
 
+        PlayMainMenuMusic();
+
         if (uiController != null)
         {
             uiController.ResetToInitialState();
@@ -267,6 +275,34 @@ public class GameController : MonoBehaviour
         if (virtualCamera2 != null) virtualCamera2.Priority = 0;
         
         if (targetCamera != null) targetCamera.Priority = 10;
+    }
+
+    void PlayMainMenuMusic()
+    {
+        if (MusicController.Instance == null || mainMenuMusic == null) return;
+        
+        AudioSource musicSource = MusicController.Instance._audioSourceMusic;
+        if (musicSource == null) return;
+        
+        if (musicSource.clip == mainMenuMusic && musicSource.isPlaying) return;
+        
+        musicSource.clip = mainMenuMusic;
+        musicSource.loop = true;
+        musicSource.Play();
+    }
+    
+    void PlayFightMusic()
+    {
+        if (MusicController.Instance == null || fightMusic == null) return;
+        
+        AudioSource musicSource = MusicController.Instance._audioSourceMusic;
+        if (musicSource == null) return;
+        
+        if (musicSource.clip == fightMusic && musicSource.isPlaying) return;
+        
+        musicSource.clip = fightMusic;
+        musicSource.loop = true;
+        musicSource.Play();
     }
 
     void OnDestroy()

@@ -20468,7 +20468,7 @@ MonoBehaviour:
   _soundButtonIconOff: {fileID: 0}
   _audioSourceMusic: {fileID: 914197807}
   _audioSourceSound: {fileID: 1303220427}
-  _uiClickSound: {fileID: 0}
+  _uiClickSound: {fileID: 8300000, guid: dd521395d3dc8b347ad7c65c56a3e381, type: 3}
 --- !u!1001 &916270527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45536,6 +45536,8 @@ MonoBehaviour:
   fightController: {fileID: 726454970}
   initialCameraSwitcher: {fileID: 152469887}
   matchFoundSound: {fileID: 8300000, guid: ed4653df79f17ca4faf811ac25a713a1, type: 3}
+  mainMenuMusic: {fileID: 8300000, guid: baf3246878bbd1c4386b00633b57a2a7, type: 3}
+  fightMusic: {fileID: 8300000, guid: 59c7b1cab6df6844dbc16cecebc5bfe1, type: 3}
 --- !u!1001 &2004305466
 PrefabInstance:
   m_ObjectHideFlags: 0
