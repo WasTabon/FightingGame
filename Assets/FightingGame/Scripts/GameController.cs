@@ -29,6 +29,9 @@ public class GameController : MonoBehaviour
     [SerializeField] private AudioClip matchFoundSound;
     [SerializeField] private AudioClip mainMenuMusic;
     [SerializeField] private AudioClip fightMusic;
+    [SerializeField] private float musicFadeDuration = 1f;
+    [SerializeField] private float mainMenuVolume = 0.3f;
+    [SerializeField] private float fightMusicVolume = 0.35f;
 
     private Transform panelChild;
     private TextMeshProUGUI searchText;
@@ -107,6 +110,7 @@ public class GameController : MonoBehaviour
             if (matchFoundSound != null && MusicController.Instance != null)
             {
                 MusicController.Instance.PlaySpecificSound(matchFoundSound);
+                StartCoroutine(FadeToFightMusic());
             }
 
             HidePanel();
@@ -164,8 +168,6 @@ public class GameController : MonoBehaviour
                 .OnComplete(() =>
                 {
                     _player.SetActive(true);
-                    
-                    PlayFightMusic();
                     
                     if (fightController != null)
                     {
@@ -248,7 +250,7 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("[GameController] OnReturnComplete");
 
-        PlayMainMenuMusic();
+        StartCoroutine(FadeToMainMenuMusic());
 
         if (uiController != null)
         {
@@ -277,6 +279,68 @@ public class GameController : MonoBehaviour
         if (targetCamera != null) targetCamera.Priority = 10;
     }
 
+    IEnumerator FadeToMainMenuMusic()
+    {
+        if (MusicController.Instance == null || mainMenuMusic == null) yield break;
+        
+        AudioSource musicSource = MusicController.Instance._audioSourceMusic;
+        if (musicSource == null) yield break;
+        
+        if (musicSource.clip == mainMenuMusic && musicSource.isPlaying) yield break;
+        
+        float startVolume = musicSource.volume;
+        
+        for (float t = 0; t < musicFadeDuration; t += Time.deltaTime)
+        {
+            musicSource.volume = Mathf.Lerp(startVolume, 0, t / musicFadeDuration);
+            yield return null;
+        }
+        
+        musicSource.volume = 0;
+        musicSource.clip = mainMenuMusic;
+        musicSource.loop = true;
+        musicSource.Play();
+        
+        for (float t = 0; t < musicFadeDuration; t += Time.deltaTime)
+        {
+            musicSource.volume = Mathf.Lerp(0, mainMenuVolume, t / musicFadeDuration);
+            yield return null;
+        }
+        
+        musicSource.volume = mainMenuVolume;
+    }
+    
+    IEnumerator FadeToFightMusic()
+    {
+        if (MusicController.Instance == null || fightMusic == null) yield break;
+        
+        AudioSource musicSource = MusicController.Instance._audioSourceMusic;
+        if (musicSource == null) yield break;
+        
+        if (musicSource.clip == fightMusic && musicSource.isPlaying) yield break;
+        
+        float startVolume = musicSource.volume;
+        
+        for (float t = 0; t < musicFadeDuration; t += Time.deltaTime)
+        {
+            musicSource.volume = Mathf.Lerp(startVolume, 0, t / musicFadeDuration);
+            yield return null;
+        }
+        
+        musicSource.volume = 0;
+        musicSource.clip = fightMusic;
+        musicSource.loop = true;
+        musicSource.Play();
+        
+        for (float t = 0; t < musicFadeDuration; t += Time.deltaTime)
+        {
+            musicSource.volume = Mathf.Lerp(0, fightMusicVolume, t / musicFadeDuration);
+            yield return null;
+        }
+        
+        musicSource.volume = fightMusicVolume;
+    }
+
     void PlayMainMenuMusic()
     {
         if (MusicController.Instance == null || mainMenuMusic == null) return;
@@ -287,20 +351,7 @@ public class GameController : MonoBehaviour
         if (musicSource.clip == mainMenuMusic && musicSource.isPlaying) return;
         
         musicSource.clip = mainMenuMusic;
-        musicSource.loop = true;
-        musicSource.Play();
-    }
-    
-    void PlayFightMusic()
-    {
-        if (MusicController.Instance == null || fightMusic == null) return;
-        
-        AudioSource musicSource = MusicController.Instance._audioSourceMusic;
-        if (musicSource == null) return;
-        
-        if (musicSource.clip == fightMusic && musicSource.isPlaying) return;
-        
-        musicSource.clip = fightMusic;
+        musicSource.volume = mainMenuVolume;
         musicSource.loop = true;
         musicSource.Play();
     }

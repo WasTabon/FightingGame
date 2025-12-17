@@ -72,6 +72,8 @@ public class FightController : MonoBehaviour
     [SerializeField] private AudioClip uppercutSound;
     [SerializeField] private AudioClip specialSound;
     [SerializeField] private AudioClip blockSound;
+    [SerializeField] private AudioClip dashToEnemySound;
+    [SerializeField] private AudioClip dashBackSound;
     
     private int playerHealth;
     private int botHealth;
@@ -298,6 +300,14 @@ public class FightController : MonoBehaviour
         
         Sequence attackSequence = DOTween.Sequence();
 
+        attackSequence.AppendCallback(() =>
+        {
+            if (dashToEnemySound != null && MusicController.Instance != null)
+            {
+                MusicController.Instance.PlaySpecificSound(dashToEnemySound);
+            }
+        });
+
         attackSequence.Append(attacker.DOMove(hitPos.position, moveToHitDuration).SetEase(Ease.OutQuad));
 
         attackSequence.AppendCallback(() => SwitchCamera(hitCamera));
@@ -498,6 +508,12 @@ public class FightController : MonoBehaviour
     void ReturnToPositions(System.Action onComplete)
     {
         Debug.Log("[FightController] ReturnToPositions");
+        
+        if (dashBackSound != null && MusicController.Instance != null)
+        {
+            MusicController.Instance.PlaySpecificSound(dashBackSound);
+        }
+        
         Sequence returnSequence = DOTween.Sequence();
         
         returnSequence.Append(player.DOMove(playerOriginalPos, moveToHitDuration).SetEase(Ease.InOutQuad));
