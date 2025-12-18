@@ -7,6 +7,8 @@ using DG.Tweening;
 public class BattlePassController : MonoBehaviour
 {
     public static BattlePassController Instance { get; private set; }
+
+    public GameObject buyButton;
     
     [Header("Premium Status")]
     [SerializeField] private bool hasPremium;
@@ -46,22 +48,34 @@ public class BattlePassController : MonoBehaviour
     
     void Start()
     {
+        LoadPremiumStatus();
+    
         CollectLevels();
         RefreshAllLevels();
-        
+    
         if (WalletController.Instance != null)
         {
             WalletController.Instance.OnLevelUp += OnLevelUp;
         }
-        
+    
         if (rewardClaimedPanel != null)
         {
             rewardClaimedPanel.SetActive(false);
         }
-        
+    
         if (autoScrollToCurrentLevel)
         {
             ScrollToCurrentLevel();
+        }
+    }
+
+    void LoadPremiumStatus()
+    {
+        hasPremium = PlayerPrefs.GetInt("BP_HasPremium", 0) == 1;
+    
+        if (buyButton != null)
+        {
+            buyButton.SetActive(!hasPremium);
         }
     }
     

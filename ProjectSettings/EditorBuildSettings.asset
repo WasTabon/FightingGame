@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/FightingGame/Scenes/Level.unity
+    guid: 5fb12ee597d468c47a0d5a40ffbb9fe9
   m_configObjects: {}

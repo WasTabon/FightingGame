@@ -99,11 +99,6 @@ public class BattlePassReward : MonoBehaviour
             checkMark.SetActive(isClaimed);
         }
         
-        if (backgroundImage != null)
-        {
-            backgroundImage.color = (isUnlocked || isClaimed) ? unlockedColor : lockedColor;
-        }
-        
         if (button != null)
         {
             button.interactable = isUnlocked;
