@@ -20,6 +20,7 @@ public class BattlePassIAPController : MonoBehaviour
             
             MusicController.Instance.PlaySpecificSound(buySound);
             loadingButton.SetActive(false);
+            buttonText.transform.parent.gameObject.SetActive(false);
             panel.SetActive(true);
         }
     }
