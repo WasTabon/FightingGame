@@ -969,7 +969,13 @@ PlayerSettings:
   windowsGamepadBackendHint: 0
   cloudProjectId: e9854fc4-93e7-4ab5-a808-50ab152c0f2f
   framebufferDepthMemorylessMode: 0
-  qualitySettingsNames: []
+  qualitySettingsNames:
+  - Very Low
+  - Low
+  - Medium
+  - High
+  - Very High
+  - Ultra
   projectName: FightingGame
   organizationId: unity_7uso5rss2sjfeq
   cloudEnabled: 0
